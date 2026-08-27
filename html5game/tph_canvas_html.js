@@ -349,48 +349,81 @@ function updateCSS() {
 // ============================================================
 // PORTRAIT RESOLUTION FIX — RUNS ONCE
 // ============================================================
-
 function stretch() {
-    const width = screen.width;
-    const height = screen.height;
+    const canvas = document.getElementById("canvas");
+    const htmlLayer = document.getElementById("canvas_html");
 
-    // Only change layout in PORTRAIT mode
-    if (width < height) {
+    if (!canvas) return;
 
-        const canvas = document.getElementById("canvas");
-        const canvas_html = document.getElementById("canvas_html");
+    // Use the actual viewport, not screen.width/screen.height
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
-        if (canvas) {
-            // Canvas visual size
-            canvas.style.position = "absolute";
-            canvas.style.left = "0";
-            canvas.style.top = "0";
-            canvas.style.width = "100vw";
-            canvas.style.height = "90vh";
+    // Detect current orientation from the viewport
+    const isPortrait = height > width;
 
-            // Actual canvas resolution
-            canvas.width = window.innerWidth;
-            canvas.height = Math.floor(window.innerHeight * 0.90);
+    if (isPortrait) {
+        // -----------------------------
+        // PORTRAIT
+        // -----------------------------
+
+        canvas.style.position = "absolute";
+        canvas.style.left = "0px";
+        canvas.style.top = "0px";
+
+        // Visual size
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+
+        // Actual drawing resolution
+        canvas.width = width;
+        canvas.height = height;
+
+        if (htmlLayer) {
+            htmlLayer.style.position = "absolute";
+            htmlLayer.style.left = "0px";
+            htmlLayer.style.top = "0px";
+            htmlLayer.style.width = width + "px";
+            htmlLayer.style.height = height + "px";
         }
 
-        if (canvas_html) {
-            // Make HTML clickable zone match canvas
-            canvas_html.style.position = "absolute";
-            canvas_html.style.left = "0";
-            canvas_html.style.top = "0";
-            canvas_html.style.width = "100vw";
-            canvas_html.style.height = "90vh";
-        }
-
-        // Make the wrapper match as well
-        if (typeof wrapper !== "undefined" && wrapper) {
+        if (wrapper) {
             wrapper.style.position = "absolute";
-            wrapper.style.left = "0";
-            wrapper.style.top = "0";
-            wrapper.style.width = "100vw";
-            wrapper.style.height = "90vh";
+            wrapper.style.left = "0px";
+            wrapper.style.top = "0px";
+            wrapper.style.width = width + "px";
+            wrapper.style.height = height + "px";
+        }
+
+    } else {
+        // -----------------------------
+        // LANDSCAPE
+        // -----------------------------
+
+        canvas.style.position = "absolute";
+        canvas.style.left = "0px";
+        canvas.style.top = "0px";
+
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+
+        canvas.width = width;
+        canvas.height = height;
+
+        if (htmlLayer) {
+            htmlLayer.style.position = "absolute";
+            htmlLayer.style.left = "0px";
+            htmlLayer.style.top = "0px";
+            htmlLayer.style.width = width + "px";
+            htmlLayer.style.height = height + "px";
+        }
+
+        if (wrapper) {
+            wrapper.style.position = "absolute";
+            wrapper.style.left = "0px";
+            wrapper.style.top = "0px";
+            wrapper.style.width = width + "px";
+            wrapper.style.height = height + "px";
         }
     }
-
-    // Landscape = do nothing
 }
