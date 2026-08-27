@@ -1,0 +1,14 @@
+set_id('karate');
+set_name('Karate Practice'); 
+set_title('Init'); 
+set_tip('Welcome to Shotokan Karate');
+place_button(x=250,y=600,w=200,h=75,str='Next',color='green',fun='NEXT');
+mocap_hidden();
+nextframe(); set_title('Karate Basic Punches'); 
+mocap_visible();
+init_workout(id='chokutsuki',reps=4,sets=2);
+set_tip('Have fun');
+nextframe();
+mocap_hidden();
+place_button(x=250,y=600,w=200,h=75,str='Finish',color='green',fun='FINISH');
+nextframe();

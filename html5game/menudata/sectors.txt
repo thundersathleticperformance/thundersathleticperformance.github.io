@@ -1,0 +1,4 @@
+Main(true);
+base(w=300,h=100,x=250,y=300,id='strength',str='Strength Training',haspng='test.png');
+base(w=300,h=100,x=250,y=470,id='yoga',str='Yoga',haspng='yoga.png');
+set_title(Express Workouts);

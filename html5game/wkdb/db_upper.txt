@@ -1,0 +1,3 @@
+jumping_jacks;
+arm_raises;
+ps_easy;

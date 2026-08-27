@@ -1,0 +1,5 @@
+base(w=300,h=100,x=250,y=300,id='fbw',str='Full Body Workout',haspng='fullbodyworkout.png');
+base(w=300,h=100,x=250,y=470,id='legs',str='Legs Workout',haspng='legsworkout.png');
+b_ase(w=300,h=100,x=250,y=640,id='biceps',str='Biceps Curls',haspng='dumb.png');
+base(w=300,h=100,x=250,y=640,id='dumbells',str='Dumbells Test',haspng='dumb.png');
+

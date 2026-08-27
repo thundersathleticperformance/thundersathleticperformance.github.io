@@ -1,0 +1,2 @@
+main(w=300,h=100,x=250,y=300,id='',str='Beginner',haspng='test.png');
+ 

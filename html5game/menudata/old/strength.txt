@@ -1,0 +1,6 @@
+base(w=300,h=100,x=250,y=300,id='fbw',str='Full Body Workout',haspng='fullbodyworkout.png');
+base(w=300,h=100,x=250,y=470,id='abs',str='Abs workout',haspng='absworkout.png')
+base(w=300,h=100,x=250,y=640,id='legs',str='Legs Workout',haspng='legsworkout.png')
+
+
+

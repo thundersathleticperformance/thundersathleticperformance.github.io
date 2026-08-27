@@ -1,0 +1,7 @@
+set_name('Shoulders Day'); 
+mocap_visible();
+set_tip('Shoulders');
+init_workout(id='dar',reps=12,sets=3);
+init_workout(id='dsar',reps=10,sets=3);
+place_button(x=350,y=600,w=200,h=75,str='Skip',color='yellow',fun='NEXT');
+nextframe();

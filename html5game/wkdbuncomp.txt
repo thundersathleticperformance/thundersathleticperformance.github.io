@@ -1,0 +1,40 @@
+
+
+<tapdb>; <base_workout(id='yoga','name='Yoga')>;
+ <main_workout(in='yoga',id='yoga_beginner',name='Yoga Beginner')>;
+ <workout_list_add(in='yoga_beginner','yoga_triangle')>;
+ <workout_list_add(in='yoga_beginner','yoga_warrior_1')>;
+<base_workout(id='strength','name='Strength Training')>;
+ <main_workout(in='strength',id='fbw',name='Full Body Workout')>;
+ <workout_list_add(in='fbw','squats')>;
+ <workout_list_add(in='fbw','lungees')>;
+<workout_list_add(in='fbw','plank')>;
+<workout_list_add(in='fbw','ps_easy')>;
+ <workout_list_add(in='fbw','arm_raises')>;
+ <main_workout(in='strength',id='ps',name='200 Pushups Special')>;
+ <workout_list_add(in='ps','pushups')>;
+ <main_workout(in='strength',id='legs',name='Lower Body Workout')>;
+ <workout_list_add(in='legs','squats')>;
+ <workout_list_add(in='legs','lungees')>;
+ <main_workout(in='strength',id='upw',name='Upper Body Workout')>;
+ <workout_list_add(in='upw','ps_easy')>;
+ <workout_list_add(in='upw','arm_raises')>;
+ <main_workout(in='strength',id='eq',name='Dumbell workout')>;
+ <workout_list_add(in='eq','biceps_curls_r')>;
+ <workout_list_add(in='eq','biceps_curls_l')>;
+ <workout_list_add(in='eq','arm_raises_r')>;
+ <workout_list_add(in='eq','arm_raises_l')>;
+ <workout_list_add(in='muaythai','yoga_triangle')>;
+
+
+
+
+ <main_workout(in='strength',id='debug',name='Debug')>;
+ <workout_list_add(in='debug','plank')>;
+ <workout_list_add(in='debug','romanian_deadlift')>;
+ <workout_list_add(in='debug','glute_bridge')>;
+ <workout_list_add(in='debug','bird_dog')>;
+//Skip
+ <main_workout(in='strength',id='',name='Calisthenics')>;
+ <workout_list_add(in='th','pushups')>;
+ <workout_list_add(in='yoga_beginner','yoga_warrior_2')>; 

@@ -1,0 +1,5 @@
+jumping_jacks;
+squats;
+lungees;
+arm_raises;
+ps_easy;

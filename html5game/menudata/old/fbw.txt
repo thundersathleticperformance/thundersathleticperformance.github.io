@@ -1,0 +1,2 @@
+main(w=300,h=100,x=200,y=300,id='sectors.txt',str='Secondary Button',haspng='test.png');
+returnto(sectors);

@@ -1,0 +1,30 @@
+set_id('WC_DAY_1'); set_name('Wing Chun - Day 1'); set_title('Getting Started'); set_tip('Starting with Warmup'); place_button(x=250,y=600,w=200,h=75,str='Next',color='green',fun='NEXT'); nextframe(); set_title('Warmup'); set_tip('You can skip warmup if you feel too desperate lol'); init_workout(id='jumping_jacks',reps=12,sets=2); init_workout(id='lungees',reps=8,sets=2); place_button(x=250,y=600,w=200,h=75,str='Skip',color='green',fun='NEXT'); nextframe(); init_workout(id='hue_ma_1',reps=4,sets=2); init_workout(id='hue_ma_2',reps=4,sets=2); init_workout(id='hue_ma_3',reps=4,sets=2); init_workout(id='hue_ma_4',reps=4,sets=2); set_tip('Siu Nim Tau part'); nextframe(); init_workout(id='wingchun_1',reps=4,sets=2); init_workout(id='wingchun_2',reps=4,sets=2); init_workout(id='wingchun_3',reps=4,sets=2); init_workout(id='wingchun_4',reps=4,sets=2); init_workout(id='wingchun_5',reps=4,sets=2); init_workout(id='wingchun_6',reps=4,sets=2); init_workout(id='wingchun_7',reps=4,sets=2); set_tip('Wing Chun Debug');
+
+
+//uncompressed : 
+set_id('WC_DAY_1');
+set_name('Wing Chun - Day 1');
+set_title('Getting Started');
+set_tip('Starting with Warmup');
+place_button(x=250,y=600,w=200,h=75,str='Next',color='green',fun='NEXT');
+nextframe();
+set_title('Warmup');
+set_tip('You can skip warmup if you feel too desperate lol');
+init_workout(id='jumping_jacks',reps=12,sets=2);
+init_workout(id='lungees',reps=8,sets=2);
+place_button(x=250,y=600,w=200,h=75,str='Skip',color='green',fun='NEXT');
+nextframe();
+init_workout(id='hue_ma_1',reps=4,sets=2);
+init_workout(id='hue_ma_2',reps=4,sets=2);
+init_workout(id='hue_ma_3',reps=4,sets=2);
+init_workout(id='hue_ma_4',reps=4,sets=2);
+set_tip('Siu Nim Tau part');
+nextframe();
+init_workout(id='wingchun_1',reps=4,sets=2);
+init_workout(id='wingchun_2',reps=4,sets=2);
+init_workout(id='wingchun_3',reps=4,sets=2);
+init_workout(id='wingchun_4',reps=4,sets=2);
+init_workout(id='wingchun_5',reps=4,sets=2);
+init_workout(id='wingchun_6',reps=4,sets=2);
+init_workout(id='wingchun_7',reps=4,sets=2);
+set_tip('Wing Chun Debug');

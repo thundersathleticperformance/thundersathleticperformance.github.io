@@ -1,0 +1,14 @@
+set_id('TKD_DAY_1');
+set_name('TKD - Day 1');
+set_title('Getting Started');
+set_tip('Starting with Warmup');
+place_button(x=250,y=600,w=200,h=75,str='Next',color='green',fun='NEXT');
+nextframe(); set_title('Warmup');
+set_tip('Time for some warmup');
+init_workout(id='jumping_jacks',reps=12,sets=2);
+place_button(x=250,y=600,w=200,h=75,str='Skip',color='green',fun='NEXT');
+nextframe(); init_workout(id='tkd_horse_single',reps=4,sets=2);
+init_workout(id='tkd_horse_double',reps=4,sets=2); set_tip('TKD Horse stance');
+place_button(x=250,y=600,w=200,h=75,str='Finish',color='green',fun='FINISH');
+nextframe();
+

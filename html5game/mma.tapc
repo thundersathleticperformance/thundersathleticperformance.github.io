@@ -1,0 +1,37 @@
+set_id('MMA_DAY_1');set_name('MMA day 1 - Beginner');set_title('MMA Init'); set_tip('MMA stands for Mixed Martial arts'); place_button(x=250,y=600,w=200,h=75,str='Next',color='blue',fun='NEXT'); nextframe(); set_title('Warmup'); set_tip('You can skip warmup if you feel too desperate lol'); init_workout(id='jumping_jacks',reps=12,sets=2); init_workout(id='high_knees',reps=8,sets=2); place_button(x=250,y=620,w=200,h=75,str='Skip',color='red',fun='NEXT'); nextframe(); init_workout(id='footwork_right',reps=4,sets=2); init_workout(id='footwork_left',reps=4,sets=2); init_workout(id='footwork_backward',reps=4,sets=2); init_workout(id='footwork_forward',reps=4,sets=2); set_tip('time to master the footwork for now'); nextframe(); set_tip('Learn the jab'); init_workout(id='jab',reps=8,sets=2); nextframe(); set_tip('Learn cross'); init_workout(id='cross',reps=8,sets=2); nextframe(); set_tip('Now Jab and Cross'); init_workout(id='jab_cross',reps=8,sets=2);
+
+
+
+
+
+
+
+
+
+//uncompressed : 
+set_id('MMA_DAY_1');
+set_name('MMA day 1 - Beginner');
+set_title('MMA Init');
+set_tip('MMA stands for Mixed Martial arts');
+place_button(x=250,y=600,w=200,h=75,str='Next',color='green',fun='NEXT');
+nextframe();
+set_title('Warmup');
+set_tip('You can skip warmup if you feel too desperate lol');
+init_workout(id='jumping_jacks',reps=12,sets=2);
+init_workout(id='lungees',reps=8,sets=2);
+place_button(x=250,y=600,w=200,h=75,str='Skip',color='green',fun='NEXT');
+nextframe();
+init_workout(id='footwork_right',reps=4,sets=2);
+init_workout(id='footwork_left',reps=4,sets=2);
+init_workout(id='footwork_backward',reps=4,sets=2);
+init_workout(id='footwork_forward',reps=4,sets=2);
+set_tip('time to master the footwork for now');
+nextframe();
+set_tip('Learn the jab');
+init_workout(id='jab',reps=8,sets=2);
+nextframe();
+set_tip('Learn cross');
+init_workout(id='cross',reps=8,sets=2);
+nextframe();
+set_tip('Now Jab and Cross');
+init_workout(id='jab_cross',reps=8,sets=2);
