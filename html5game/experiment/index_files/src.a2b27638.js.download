@@ -120857,7 +120857,7 @@ var AnimationUtils = {
         var frame = track.times[j] * fps;
         if (frame < startFrame || frame >= endFrame) continue;
         times.push(track.times[j]);
-	console.log("FPS TEST : " ,fps)
+
         for (var k = 0; k < valueSize; ++k) {
           values.push(track.values[j * valueSize + k]);
         }
@@ -135447,9 +135447,9 @@ const STATE = {
 exports.STATE = STATE;
 const BLAZEPOSE_CONFIG = {
   maxPoses: 1,
-  type: 'lite',
+  type: 'full',
   scoreThreshold: 0.65,
-  render3D: false
+  render3D: true
 };
 exports.BLAZEPOSE_CONFIG = BLAZEPOSE_CONFIG;
 const POSENET_CONFIG = {
@@ -135864,7 +135864,7 @@ async function setupDatGui(urlParams) {
   cameraFolder.open(); // The model folder contains options for model selection.
 
   const modelFolder = gui.addFolder('Model');
-  const model =  "blazepose" // urlParams.get('model');
+  const model = urlParams.get('model');
   let type = urlParams.get('type');
 
   switch (model) {
@@ -136291,7 +136291,7 @@ async function createDetector() {
         return posedetection.createDetector(_params.STATE.model, {
           runtime,
           modelType: _params.STATE.modelConfig.type,
-          solutionPath: `./npm/@mediapipe/pose@${mpPose.VERSION}`
+          solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/pose@${mpPose.VERSION}`
         });
       } else if (runtime === 'tfjs') {
         return posedetection.createDetector(_params.STATE.model, {
@@ -136417,18 +136417,7 @@ async function renderResult() {
 
   if (poses && poses.length > 0 && !_params.STATE.isModelChanged) {
     camera.drawResults(poses);
-         lm = (JSON.stringify(poses[0]))	
-
-var url_string = window.location.href;  // Get the current URL
-var url = new URL(url_string);
-var debugmode = url.searchParams.get("debug");
-var androidmode = url.searchParams.get("android");
-if (androidmode == "true") {
-GMWEBVIEW.push(lm)}
-if (debugmode == "true") {console.log(lm)}
-
-
-
+         lm = (JSON.stringify(poses[0]))
     //pbuh0
     function taplandmarks() {
     return(JSON.stringify(poses[0]))
