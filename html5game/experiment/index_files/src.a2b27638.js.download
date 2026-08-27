@@ -127329,6 +127329,23 @@ function AnimationObjectGroup() {
   this._bindingsIndicesByPath = {}; // inside: indices in these arrays
 
   var scope = this;
+  this.stats = {
+    objects: {
+      get total() {
+        return scope._objects.length;
+      },
+
+      get inUse() {
+        return this.total - scope.nCachedObjects_;
+      }
+
+    },
+
+    get bindingsPerObject() {
+      return scope._bindings.length;
+    }
+
+  };
 }
 
 Object.assign(AnimationObjectGroup.prototype, {
@@ -128135,7 +128152,38 @@ AnimationMixer.prototype = Object.assign(Object.create(EventDispatcher.prototype
 
     this._nActiveControlInterpolants = 0;
     var scope = this;
+    this.stats = {
+      actions: {
+        get total() {
+          return scope._actions.length;
+        },
 
+        get inUse() {
+          return scope._nActiveActions;
+        }
+
+      },
+      bindings: {
+        get total() {
+          return scope._bindings.length;
+        },
+
+        get inUse() {
+          return scope._nActiveBindings;
+        }
+
+      },
+      controlInterpolants: {
+        get total() {
+          return scope._controlInterpolants.length;
+        },
+
+        get inUse() {
+          return scope._nActiveControlInterpolants;
+        }
+
+      }
+    };
   },
   // Memory management for AnimationAction objects
   _isActiveAction: function (action) {
@@ -136159,7 +136207,7 @@ exports.setupStats = setupStats;
  * =============================================================================
  */
 function setupStats() {
- // const stats = new Stats();
+  const stats = new Stats();
   stats.customFpsPanel = stats.addPanel(new Stats.Panel('FPS', '#0ff', '#002'));
   stats.showPanel(stats.domElement.children.length - 1);
   const parent = document.getElementById('stats');
@@ -136215,7 +136263,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
  * =============================================================================
  */
 tfjsWasm.setWasmPaths(`https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@${tfjsWasm.version_wasm}/dist/`);
-let detector, camera;
+let detector, camera, stats;
 let startInferenceTime,
     numInferences = 0;
 let inferenceTimeSum = 0,
@@ -136316,7 +136364,20 @@ function beginEstimatePosesStats() {
 }
 
 function endEstimatePosesStats() {
+  const endInferenceTime = (performance || Date).now();
+  inferenceTimeSum += endInferenceTime - startInferenceTime;
+  ++numInferences;
+  const panelUpdateMilliseconds = 1000;
 
+  if (endInferenceTime - lastPanelUpdate >= panelUpdateMilliseconds) {
+    const averageInferenceTime = inferenceTimeSum / numInferences;
+    inferenceTimeSum = 0;
+    numInferences = 0;
+    stats.customFpsPanel.update(1000.0 / averageInferenceTime, 120
+    /* maxValue */
+    );
+    lastPanelUpdate = endInferenceTime;
+  }
 }
 
 async function renderResult() {
@@ -136386,7 +136447,7 @@ async function app() {
   }
 
   await (0, _option_panel.setupDatGui)(urlParams);
-  //stats = (0, _stats_panel.setupStats)();
+  stats = (0, _stats_panel.setupStats)();
   camera = await _camera.Camera.setupCamera(_params.STATE.camera);
   await (0, _util.setBackendAndEnvFlags)(_params.STATE.flags, _params.STATE.backend);
   detector = await createDetector();
