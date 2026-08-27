@@ -255,7 +255,7 @@ function stretchCanvasFullscreen() {
         canvas.style.left = "0";
         canvas.style.top = "0";
         canvas.style.width = "100vw"; // Use viewport width
-        canvas.style.height = "100vh"; // Use viewport height
+        canvas.style.height = "88vh"; // Use viewport height
 
         // Adjust canvas size based on the window dimensions
         canvas.width = window.innerWidth;
@@ -263,16 +263,16 @@ function stretchCanvasFullscreen() {
     }
 }
 
-// Call this function on window resize
-window.addEventListener('resize', stretchCanvasFullscreen);
+// // Call this function on window resize
+// window.addEventListener('resize', stretchCanvasFullscreen);
 
-// Call the function initially to set the canvas size to fullscreen when the page loads
-document.addEventListener('DOMContentLoaded', stretchCanvasFullscreen);
+// // Call the function initially to set the canvas size to fullscreen when the page loads
+// document.addEventListener('DOMContentLoaded', stretchCanvasFullscreen);
 
 
 function allowfs() {
 if (confirm("Fullscreen?") == true) {
-ToggleFullScreen();
+// ToggleFullScreen();
 } else {
 }
 }
@@ -342,7 +342,55 @@ function updateCSS() {
 
     // Append the style element to the head
     document.head.appendChild(style);
+	stretch()
 }
 
 // Call the function to update CSS
+// ============================================================
+// PORTRAIT RESOLUTION FIX — RUNS ONCE
+// ============================================================
 
+function stretch() {
+    const width = screen.width;
+    const height = screen.height;
+
+    // Only change layout in PORTRAIT mode
+    if (width < height) {
+
+        const canvas = document.getElementById("canvas");
+        const canvas_html = document.getElementById("canvas_html");
+
+        if (canvas) {
+            // Canvas visual size
+            canvas.style.position = "absolute";
+            canvas.style.left = "0";
+            canvas.style.top = "0";
+            canvas.style.width = "100vw";
+            canvas.style.height = "90vh";
+
+            // Actual canvas resolution
+            canvas.width = window.innerWidth;
+            canvas.height = Math.floor(window.innerHeight * 0.90);
+        }
+
+        if (canvas_html) {
+            // Make HTML clickable zone match canvas
+            canvas_html.style.position = "absolute";
+            canvas_html.style.left = "0";
+            canvas_html.style.top = "0";
+            canvas_html.style.width = "100vw";
+            canvas_html.style.height = "90vh";
+        }
+
+        // Make the wrapper match as well
+        if (typeof wrapper !== "undefined" && wrapper) {
+            wrapper.style.position = "absolute";
+            wrapper.style.left = "0";
+            wrapper.style.top = "0";
+            wrapper.style.width = "100vw";
+            wrapper.style.height = "90vh";
+        }
+    }
+
+    // Landscape = do nothing
+}
