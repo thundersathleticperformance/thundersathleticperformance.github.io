@@ -1,7 +1,0 @@
-set_name('Dumbells Workout'); 
-mocap_visible();
-set_tip('Upper Body');
-init_workout(id='dbh',reps=10,sets=3);
-init_workout(id='dar',reps=10,sets=3);
-place_button(x=350,y=600,w=200,h=75,str='Skip',color='yellow',fun='NEXT');
-nextframe();

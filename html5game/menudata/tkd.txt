@@ -1,2 +1,0 @@
-Main(false);
-tapc_square(w=300,h=100,x=100,y=350,id='tkd.tapc',str='Basics',haspng='tkd.jpg');

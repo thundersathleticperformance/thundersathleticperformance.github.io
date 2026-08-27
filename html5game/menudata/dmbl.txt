@@ -1,8 +1,0 @@
-Main(false);
-tapc_square(w=300,h=100,x=100,y=350,id='dmbl1.tapc',str='DAY 1',haspng='db1.jpg');
-tapc__square(w=300,h=100,x=250,y=350,id='dmbl2.tapc',str='DAY 2',haspng='db1.jpg');
-tapc__square(w=300,h=100,x=400,y=350,id='dmbl3.tapc',str='DAY 3',haspng='db1.jpg');
-
-tapc__square(w=300,h=100,x=100,y=500,id='dmbl4.tapc',str='DAY 4',haspng='db1.jpg');
-tapc__square(w=300,h=100,x=250,y=500,id='dmbl5.tapc',str='DAY 5',haspng='db1.jpg');
-tapc__square(w=300,h=100,x=400,y=500,id='dmbl6.tapc',str='DAY 6',haspng='db1.jpg');

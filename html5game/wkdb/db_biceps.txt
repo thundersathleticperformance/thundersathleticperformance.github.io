@@ -1,4 +1,0 @@
-biceps_curls_l;
-biceps_curls_r;
-arm_raises_l;
-arm_raises_r;

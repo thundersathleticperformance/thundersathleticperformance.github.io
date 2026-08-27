@@ -1,8 +1,0 @@
-base(w=150,h=150,x=375,y=300,id='karate',str='Karate',haspng='karate.png');
-base(w=150,h=150,x=225,y=300,id='mt',str='Muay Thai',haspng='mt.png');
-ba_s_e(w=150,h=150,x=525,y=300,id='tkd',str='TKD',haspng='tkd.jpg');
-
-base(w=150,h=150,x=225,y=550,id='dmbl',str='Dumbells',haspng='db1.jpg');
-
-tapc__square(w=300,h=100,x=100,y=350,id='karate',str='Karate',haspng='karate.png')
-

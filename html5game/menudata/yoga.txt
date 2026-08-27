@@ -1,2 +1,0 @@
-exer(db_yoga1);
-Main(false);

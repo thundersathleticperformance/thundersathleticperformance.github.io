@@ -1,2 +1,0 @@
-exer(db_biceps);
-Main(false);
